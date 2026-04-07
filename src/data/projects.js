@@ -120,5 +120,28 @@ export const projects = [
       { type: 'image', url: 'session.jpg', caption: 'Last 50 data entries for a sample session, updated live.' },
       { type: 'image', url: 'tables.jpg', caption: 'SpO and Pulse Tables, updated live.'}
     ]
-  }
+  },
+  {
+    id : 6,
+    title: "Weld Gap Detection",
+    category: "Software",
+    description: "Computer Vision system for detecting weld gap size and location",
+    longDesc: "tbd",
+    tags: ["OpenCV", "Computer Vision"],
+    techStack: [
+      { label: "Tools and Frameworks", items: ['OpenCV']},
+      { label: "Techniques", items: ['Sobel Filtering', 'Feature Detection']},
+    ],
+    links: [
+      { name: "Github", type: "github", url: "https://github.com/VndrewJ/Computer-vision-project"},
+    ],
+    image: "/thumbnails/weld-gap-detection.jpg",
+    folder: "weld-gap-detection",
+    media: [
+      { type: 'image', url: 'interim-filter1.JPG', caption: 'Vertical Sobel filter applied to an image of a weld seam.'},
+      { type: 'image', url: 'interim-filter2.JPG', caption: 'Binary Thresholding occurs to create an edge mask on the weld seam.' },
+      { type: 'image', url: 'weld-gap.jpg', caption: 'Hough Line Transform is applied to the edge mask to detect lines in the image.'},
+      { type: 'image', url: 'original.jpg', caption: 'Original image of the weld seam.'}
+    ]
+  },
 ];
