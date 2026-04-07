@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+html, 
+body, 
+#root {
+  /* REMOVED: height: 100% and overflow: hidden */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Changed bg-slate-400 to bg-slate-50 for better navbar contrast */
+  @apply bg-slate-400 text-stone-950 antialiased;
+}
+
+.scrollbar-stable {
+  scrollbar-gutter: stable;
+}
+
+.scrollbar-stable::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-stable::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-stable::-webkit-scrollbar-thumb {
+  background-color: rgba(3, 105, 161, 0.4); 
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.scrollbar-stable::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(3, 105, 161, 1);
+}
