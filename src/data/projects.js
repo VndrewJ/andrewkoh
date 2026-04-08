@@ -1,10 +1,12 @@
+import { longDesc } from "./longDesc";
+
 export const projects = [
   {
     id: 1,
     title: "BLE-MIDI Controller",
     category: "Embedded",
     description: "A bluetooth low energy midi controller built for real-time responsiveness",
-    longDesc: "Achieved sub-millisecond input latency by implementing a 1kHz deterministic scanner using the ESP32 GPTimer hardware peripheral. The architecture isolates time-critical hardware scanning on Core 1 from the BLE stack on Core 0 using FreeRTOS, ensuring deterministic performance regardless of network load.",
+    longDesc: longDesc.MIDI_CTRL,
     tags: ["ESP32", "C++", "RTOS"],
     techStack: [
       { label: "Hardware", items: ['ESP32 WROOM']},
@@ -24,33 +26,10 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Autonomous Fire Fighting Robot",
-    category: "Embedded, Robotics",
-    description: "A robot that autonomously navigates an obstacle course and extinguishes a candle flame.",
-    longDesc: "Developed a behavioral control system on an AVR RISC architecture. The robot utilizes a suite of sensors to navigate complex environments, detect flame signatures via IR, and execute an extinguishing routine while maintaining stability and obstacle avoidance.",
-    tags: ["AVR RISC", "C", "Control Systems"],
-    techStack:[
-      { label: "Hardware", items: ['ATMega328p', 'IR Sensor', 'Ultrasonic', 'Servo Motors']},
-      { label: "Techniques", items: ['Behavioral Control', 'Sensor Fusion', 'PID Control', 'Kalman Filter']},
-    ],
-    links: [
-      { name: "Github", type: "github", url: "https://github.com/eoxe316/706project2"},
-      { name: "PDF Report", type: "pdf", url: "https://drive.google.com/file/d/1yipn0b2hiPKgmFebplIBglRYtJxicD4i/view?usp=sharing" },
-    ],
-    image: "/thumbnails/fire-fighting.JPG",
-    folder: "fire-fighting",
-    media: [
-      { type: 'image', url: 'robot.jpg', caption: 'Diagram of the robot' },
-      { type: 'image', url: 'behavioural_control.jpg', caption: 'Behavioral control flowchart' },
-      { type: 'video', url: 'fire-fighting-demo.mp4', caption: 'Live demo of the robot' },
-    ]
-  },
-  {
-    id: 3,
     title: "6D Pose Estimation for Autonomous Assembly Robot",
     category: "Robotics, Software",
     description: "A computer vision system for estimating the 6D pose of novel objects, designed for use in an autonomous assembly robot.",
-    longDesc: "Developed a computer vision system using deep learning techniques to estimate the 6D pose of novel objects in real-time. The system integrates with an autonomous assembly robot to enable precise manipulation and placement of components.",
+    longDesc: longDesc.POSE_EST,
     tags: ["ROS", "Machine Learning", "Computer Vision"],
     techStack: [
       { label: "Hardware", items: ['UR5e Robotic Arm', 'Intel RealSense Depth Camera']},
@@ -69,6 +48,30 @@ export const projects = [
       { type: 'image', url: 'test-accuracy.jpg', caption: 'Visualization of test accuracy, showing predicted vs actual pose' },
       { type: 'image', url: 'active_percep_change.png', caption: 'Comparison of the change in position between VFH Pose Estimation and forward kinematics in the x and y axes.'},
       { type: 'video', url: 'IMG_5574.mp4', caption: 'Demo of robot moving the object'},
+    ]
+  },
+  {
+    id : 3,
+    title: "Telemetry Oximeter Platform",
+    category: "Software",
+    description: "A telemetry platform for pulse oximeters, enabling remote monitoring of patient vitals.",
+    longDesc: "tbd",
+    tags: ["Full-Stack Development", "IoT"],
+    techStack: [
+      { label: "Tools and Frameworks", items: ['React', 'Flask', 'Supabase (PostgreSQL)']},
+      { label: "Connectivity", items: ['BLE (Bleak)', 'REST API', 'Websockets']},
+      { label: "Database", items: ['Supabase', 'PostgreSQL']},
+      { label: "Security", items: ['Session Based Authentication']},
+    ],
+    links: [
+      { name: "Github", type: "github", url: "https://github.com/VndrewJ/tele-oximeter"},
+    ],
+    image: "/thumbnails/teleoximeter.jpg",
+    folder: "tele-oximeter",
+    media: [
+      { type: 'image', url: 'Home.jpg', caption: 'Home page of web app, asking for session key a desired session.'},
+      { type: 'image', url: 'session.jpg', caption: 'Last 50 data entries for a sample session, updated live.' },
+      { type: 'image', url: 'tables.jpg', caption: 'SpO and Pulse Tables, updated live.'}
     ]
   },
   {
@@ -99,30 +102,52 @@ export const projects = [
   },
   {
     id : 5,
-    title: "Telemetry Oximeter Platform",
-    category: "Software",
-    description: "A telemetry platform for pulse oximeters, enabling remote monitoring of patient vitals.",
-    longDesc: "tbd",
-    tags: ["Full-Stack Development", "IoT"],
-    techStack: [
-      { label: "Tools and Frameworks", items: ['React', 'Flask', 'Supabase (PostgreSQL)']},
-      { label: "Connectivity", items: ['BLE (Bleak)', 'REST API', 'Websockets']},
-      { label: "Database", items: ['Supabase', 'PostgreSQL']},
-      { label: "Security", items: ['Session Based Authentication']},
+    title: "Autonomous Fire Fighting Robot",
+    category: "Embedded, Robotics",
+    description: "A robot that autonomously navigates an obstacle course and extinguishes a candle flame.",
+    longDesc: "Developed a behavioral control system on an AVR RISC architecture. The robot utilizes a suite of sensors to navigate complex environments, detect flame signatures via IR, and execute an extinguishing routine while maintaining stability and obstacle avoidance.",
+    tags: ["AVR RISC", "C", "Control Systems"],
+    techStack:[
+      { label: "Hardware", items: ['ATMega328p', 'IR Sensor', 'Ultrasonic', 'Servo Motors']},
+      { label: "Techniques", items: ['Behavioral Control', 'Sensor Fusion', 'PID Control', 'Kalman Filter']},
     ],
     links: [
-      { name: "Github", type: "github", url: "https://github.com/VndrewJ/tele-oximeter"},
+      { name: "Github", type: "github", url: "https://github.com/eoxe316/706project2"},
+      { name: "PDF Report", type: "pdf", url: "https://drive.google.com/file/d/1yipn0b2hiPKgmFebplIBglRYtJxicD4i/view?usp=sharing" },
     ],
-    image: "/thumbnails/teleoximeter.jpg",
-    folder: "tele-oximeter",
+    image: "/thumbnails/fire-fighting.JPG",
+    folder: "fire-fighting",
     media: [
-      { type: 'image', url: 'Home.jpg', caption: 'Home page of web app, asking for session key a desired session.'},
-      { type: 'image', url: 'session.jpg', caption: 'Last 50 data entries for a sample session, updated live.' },
-      { type: 'image', url: 'tables.jpg', caption: 'SpO and Pulse Tables, updated live.'}
+      { type: 'image', url: 'robot.jpg', caption: 'Diagram of the robot' },
+      { type: 'image', url: 'behavioural_control.jpg', caption: 'Behavioral control flowchart' },
+      { type: 'video', url: 'fire-fighting-demo.mp4', caption: 'Live demo of the robot' },
     ]
   },
   {
     id : 6,
+    title: "Reinforcement Learning for Pokemon Red",
+    category: "Software, Machine Learning",
+    description: "A reinforcement learning agent trained to play Pokemon Red using various policies and custom reward functions.",
+    longDesc: "tbd",
+    tags: ["Reinforcement Learning", "Python"],
+    techStack: [
+      { label: "Tools and Frameworks", items: ['OpenAI Gym', 'PyBoy', 'Stable Baselines3']},
+      { label: "Policies", items: ['PPO', 'TD3', 'SAC', 'LAPSAC']},
+      { label: "Techniques", items: ['Reward Shaping']},
+    ],
+    links: [
+      { name: "Github", type: "github", url: "https://github.com/VndrewJ/compsys726_pokemon_agent" },
+    ],
+    image: "/thumbnails/ai-pokemon.png",
+    folder: "ai-pokemon",
+    media: [
+      { type: 'image', url: 'LAPSACvSAC.png', caption: 'Comparison of LAPSAC and SAC algorithms.' },
+      { type: 'image', url: 'LAPSAC-results.jpg', caption: 'Results of LAPSAC algorithm over 11k steps.' },
+      { type: 'video', url: 'Results.mp4', caption: 'Video showcasing the performance of the trained agent.' }
+    ]
+  },
+  {
+    id : 7,
     title: "Weld Gap Detection",
     category: "Software",
     description: "Computer Vision system for detecting weld gap size and location",
