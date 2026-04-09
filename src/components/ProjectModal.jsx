@@ -11,6 +11,7 @@ const ProjectModal = ({ project, onClose }) => {
       if (event.key === 'Escape') onClose();
     };
     window.addEventListener('keydown', handleEsc);
+
     document.documentElement.style.overflow = 'hidden';
 
     return () => {
@@ -109,14 +110,16 @@ const ProjectModal = ({ project, onClose }) => {
 
           {/* Media */}
           <section>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 mb-6">Technical Media & Demos</h3>
+            <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 mb-6">Media</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {project.media?.map((item, index) => {
-                const assetUrl = getMediaUrl(project.folder, item.url);
+                const isExternal = item.url.includes('drive.google.com'); // Switched to embed google drive vids
+                const assetUrl = isExternal ? item.url : getMediaUrl(project.folder, item.url);
+
                 return (
                   <div 
                     key={index} 
-                    className="group relative rounded-lg overflow-hidden border border-slate-300 bg-slate-200 cursor-zoom-in"
+                    className={`group relative rounded-lg overflow-hidden border border-slate-300 bg-slate-200 ${item.type === 'image' ? 'cursor-zoom-in' : ''}`}
                     onClick={() => item.type === 'image' && setZoomedImage(assetUrl)}
                   >
                     {item.type === 'image' && (
@@ -124,11 +127,21 @@ const ProjectModal = ({ project, onClose }) => {
                         <ZoomIn className="text-white" size={32} />
                       </div>
                     )}
+
+                    {/* Media */}
                     {item.type === 'image' ? (
                       <img src={assetUrl} alt={item.caption} className="w-full aspect-video object-cover" />
+                    ) : isExternal ? (
+                      <iframe 
+                        src={assetUrl} 
+                        className="w-full aspect-video bg-black border-none" 
+                        allow="autoplay"
+                        title={item.caption}
+                      />
                     ) : (
                       <video src={assetUrl} controls className="w-full aspect-video bg-black" />
                     )}
+
                     <div className="p-3 bg-slate-200 border-t border-slate-300 text-center text-sm text-slate-600 font-medium">
                       {item.caption}
                     </div>
@@ -140,7 +153,7 @@ const ProjectModal = ({ project, onClose }) => {
         </div>
       </div>
 
-      {/* Lightbox */}
+      {/* Lightbox  */}
       {zoomedImage && (
         <div 
           className="fixed inset-0 z-[1100] flex items-center justify-center bg-slate-950/95 p-4 cursor-zoom-out"

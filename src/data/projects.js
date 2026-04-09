@@ -128,7 +128,7 @@ export const projects = [
     title: "Reinforcement Learning for Pokemon Red",
     category: "Software, Machine Learning",
     description: "A reinforcement learning agent trained to play Pokemon Red using various policies and custom reward functions.",
-    longDesc: "tbd",
+    longDesc: longDesc.AI_POKEMON,
     tags: ["Reinforcement Learning", "Python"],
     techStack: [
       { label: "Tools and Frameworks", items: ['OpenAI Gym', 'PyBoy', 'Stable Baselines3']},
@@ -137,6 +137,7 @@ export const projects = [
     ],
     links: [
       { name: "Github", type: "github", url: "https://github.com/VndrewJ/compsys726_pokemon_agent" },
+      { name: "Report", type: "pdf", url: "https://drive.google.com/file/d/1ABq-CQpiaAv2rdwKyb8yoJcPHz3Ixkhv/view?usp=sharing"}
     ],
     image: "/thumbnails/ai-pokemon.png",
     folder: "ai-pokemon",
