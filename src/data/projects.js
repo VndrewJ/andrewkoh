@@ -120,7 +120,7 @@ export const projects = [
     media: [
       { type: 'image', url: 'robot.jpg', caption: 'Diagram of the robot' },
       { type: 'image', url: 'behavioural_control.jpg', caption: 'Behavioral control flowchart' },
-      { type: 'video', url: 'fire-fighting-demo.mp4', caption: 'Live demo of the robot' },
+      { type: 'video', url: 'https://drive.google.com/file/d/1se8JHMc2rX0TvxJ35W6HB9mnOjxKGPHz/preview', caption: 'Live demo of the robot' },
     ]
   },
   {
@@ -144,7 +144,7 @@ export const projects = [
     media: [
       { type: 'image', url: 'LAPSACvSAC.png', caption: 'Comparison of LAPSAC and SAC algorithms.' },
       { type: 'image', url: 'LAPSAC-results.jpg', caption: 'Results of LAPSAC algorithm over 11k steps.' },
-      { type: 'video', url: 'Results.mp4', caption: 'Video showcasing the performance of the trained agent.' }
+      { type: 'video', url: 'https://drive.google.com/file/d/1kRjxY74VfFWnQa9WYEQhZA6JAEkyN_Jm/preview', caption: 'Video showcasing the performance of the trained agent.' }
     ]
   },
   {
