@@ -55,7 +55,7 @@ export const projects = [
     title: "Telemetry Oximeter Platform",
     category: "Software",
     description: "A telemetry platform for pulse oximeters, enabling remote monitoring of patient vitals.",
-    longDesc: "tbd",
+    longDesc: longDesc.TELE_OXI,
     tags: ["Full-Stack Development", "IoT"],
     techStack: [
       { label: "Tools and Frameworks", items: ['React', 'Flask', 'Supabase (PostgreSQL)']},
@@ -69,6 +69,7 @@ export const projects = [
     image: "/thumbnails/teleoximeter.jpg",
     folder: "tele-oximeter",
     media: [
+      { type: 'image', url: 'flowchart.jpg', caption: 'Flowchart of the system architecture and data flow' },
       { type: 'image', url: 'Home.jpg', caption: 'Home page of web app, asking for session key a desired session.'},
       { type: 'image', url: 'session.jpg', caption: 'Last 50 data entries for a sample session, updated live.' },
       { type: 'image', url: 'tables.jpg', caption: 'SpO and Pulse Tables, updated live.'}
@@ -105,7 +106,7 @@ export const projects = [
     title: "Autonomous Fire Fighting Robot",
     category: "Embedded, Robotics",
     description: "A robot that autonomously navigates an obstacle course and extinguishes a candle flame.",
-    longDesc: "Developed a behavioral control system on an AVR RISC architecture. The robot utilizes a suite of sensors to navigate complex environments, detect flame signatures via IR, and execute an extinguishing routine while maintaining stability and obstacle avoidance.",
+    longDesc: longDesc.FIRE_FIGHTING,
     tags: ["AVR RISC", "C", "Control Systems"],
     techStack:[
       { label: "Hardware", items: ['ATMega328p', 'IR Sensor', 'Ultrasonic', 'Servo Motors']},
