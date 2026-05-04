@@ -14,7 +14,6 @@ const Projects = ({ setShowNavbar }) => {
             and software engineering.
           </p>
         </div>
-        {/* Pass the setter down so the Grid can hide the navbar pill when a project is selected */}
         <ProjectGrid setShowNavbar={setShowNavbar} />
       </div>
     </section>

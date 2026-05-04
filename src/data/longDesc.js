@@ -85,4 +85,26 @@ Looking back on the project, I think our biggest area of improvement would our u
 If we were to do this project again, I would want to implement a more robust and efficient codebase, potentially using an RTOS to manage the different behaviours and sensor readings more effectively.
 `
 ,
+    ROBOT_HAND:
+` The main project of the MECHENG 736: Biomechatronic Systems course was to design and build a robotic gripper, acutated by a singular dynamixel servo, to pick up a variety of objects ranging from small and thin, to large and heavy. 
+We were given a lot of freedom in the design of the gripper, with the only requirement being the singular motor. Additional marks were given for designs that were anthropomorphic, strongest, and most novel.
+
+For our group, we decided to go with a 5 finger, double jointed, **anthropomorphic** design with a whipple tree mechanism to evenly distribute the force of the motor across all fingers. CAD was done in **Onshape** and parts were 3D printed in PLA with rubber molds used for hand/finger pids to increase friction.
+The design process was quite iterative, with us going through multiple prototypes for the fingers and whipple tree mechanism before settling on our final design as shown below.
+
+To mimic the actuation of a human hand, we used a **tendon driven actuation** system, where the dynamixel servo would pull on tendons attached to the fingers to close the gripper. This allowed for a more compact design and also provided a more natural movement to the fingers. 
+A lot of our biggest challenges came with friction between the tendons and the guides as well as phalanges and joints, which caused a lot of our issues with getting the fingers to move smoothly and with enough force. We tried to mitigate this as much as possible using small rubber bands conencting each finger joint to try even out the tension across each tendon, but it was still quite difficult to get it right.
+
+Our fingers were designed to be double jointed, with a proximal and distal phalange, to allow for better gripping of objects. Additionally, 2 different finger tips were used.
+The first of which used a thin fingernail design meant for picking up thin objects such as the card and washer. The second utilised a ramp design meant for picking up larger, heavier, and irregularly shaped objects, such as the chain bundle.
+
+The finger arrangement was also designed so that the 2 fingernail fingers were opposite each other, allowing for better gripping of thin objects, while the ramp fingers were interlocking with each other to provide better support for heavier objects.
+
+Overall, our gripper was able to achieve **full marks**, being able to pick up all required objects, as well as achieving a maximum grip force of 50N, a respectable amount for a single motor gripper of our size.
+
+For future improvements, I think the biggest area would be improving the friction in the system, as this was the main cause of our issues with getting the fingers to move smoothly and with enough force. This could be done through better material choices for the fingers and joints, as well as improving lubrication in the system. Additionally, a rack and pinion based design instead of whipple tree could potentially provide more consistent force distribution across the fingers, as we had some issues with the whipple tree mechanism getting out of sync and causing uneven finger movement.
+Other designs we considered was the use of TPA plastic for the fingers, which could have provided a more flexible and compliant design, as well as a more traditional parallel jaw gripper design, which would have been simpler to build and control, but less novel and anthropomorphic.
+
+
+`
 }

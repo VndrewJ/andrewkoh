@@ -80,7 +80,7 @@ export const projects = [
     title: "Anthropomorphic Underactuated Robotic Gripper",
     category: "Robotics, Mechanical",
     description: "A robotic gripper designed to mimic the human hand's dexterity using a singular actuator.",
-    longDesc: "tbd",
+    longDesc: longDesc.ROBOT_HAND,
     tags: ["CAD", "Mechanical Design", "Rapid Prototyping"],
     techStack: [
       { label: "Hardware", items: ['Dynamixel MMX-64AR', '3D Printed Components']},

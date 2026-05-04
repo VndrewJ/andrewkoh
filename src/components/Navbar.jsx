@@ -14,8 +14,7 @@ function Navbar() {
 
   return (
     <>
-      {/* 1. THE NAME: Uses 'absolute' to stay at the top of the document.
-          It will scroll up and off-screen as the user scrolls down. */}
+      {/* Title Name */}
       <div className="absolute top-0 left-0 px-10 py-8 z-0">
         <Link 
           to="/" 
@@ -25,11 +24,8 @@ function Navbar() {
         </Link>
       </div>
 
-      {/* 2. THE PILL: Uses 'fixed' to stay at the top of the viewport.
-          'pointer-events-none' ensures the full-width wrapper doesn't block 
-          clicks on content behind the pill. */}
+      {/* Navigation Pill */}
       <div className="fixed top-0 left-0 w-full flex justify-center py-6 z-50 pointer-events-none">
-        {/* Re-enable pointer events for the pill itself */}
         <div className="flex items-center gap-2 p-1 bg-white/30 backdrop-blur-md border border-stone-200/30 rounded-full shadow-lg pointer-events-auto">
           <Link to="/" className={getLinkStyles('/')}>
             <Home size={20} strokeWidth={checkActive('/') ? 2.5 : 2} />
